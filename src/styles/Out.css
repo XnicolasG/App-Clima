@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,400;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.MainCont{
+    background-image: url(https://images.pexels.com/photos/10954124/pexels-photo-10954124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+.MainContLog{
+    background-image: url(https://images.pexels.com/photos/575763/pexels-photo-575763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+.Formulario{
+    width: 40%;
+    margin: auto;
+    padding: 1.5%;
+    border-radius: 8px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.041);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+}
+.Titulo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    letter-spacing: 3.5px;
+    text-align: center;
+}
+.inputs{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    border: 2px solid rgb(145, 142, 142);
+    padding: 1.2%;
+    background: rgba(255, 255, 255, 0.432);
+}
+.inputs:focus{
+    background: rgba(255, 255, 255, 0.596);
+
+}
+.contBtn{
+    text-align: center;
+    justify-content: center;
+    gap: 2px;
+}
+.btn{
+    width: 40%;
+    cursor: pointer;
+    padding: 1.2%;
+    background: rgba(169, 208, 232, 0.356);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1.2px;
+    border-radius: 8px;
+    border: 2x solid rgb(145, 142, 142);
+}
+.btn:hover{
+    background: rgba(112, 203, 226, 0.336);
+    transform: scale(1.1);
+    transition: all .3s ease-in;
+}
+.btn:focus{
+    border: 2px solid rgb(71, 156, 49);
+    color: rgb(71, 156, 49);
+}
+.linkto{
+    width: 40%;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(40, 111, 153);
+    font-size:larger ;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+
+}
+.TitGoo{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 2%;
+    font-weight: bolder;
+}
+.btn-google{
+    width: 12%;
+    background: transparent;
+    height: 12%;
+    border-radius: 100px;
+    padding: 1.2%;
+    border: none;
+    cursor: pointer;
+}
+.IconGoogle{
+    width: 100%;
+}
+.IconGoogle:hover{
+    transform: scale(1.1);
+    transition: all .5s ease;
+}
