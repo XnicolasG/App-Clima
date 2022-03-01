@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/In.css'
+import {useDispatch} from 'react-redux'
 import { getGeo, getWeather } from '../helpers/getData'
+import { AsyncDelete, AsyncList, AsyncListActions } from '../actions/ListActions'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
 
-
+const dispatch = useDispatch()
     // ============ BUSCADOR ================
     const [search, setSearch] = useState({
         place: ''
@@ -60,22 +63,35 @@ const Home = () => {
         getWeather(apiW, setWeather)
         console.log(weather);
     }
-
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        dispatch(AsyncListActions(place))
+    }
+    
+    const listing =() =>{
+        dispatch(AsyncList())
+    }
     useEffect(() => {
         Data()
-
         // weatherIcon()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [place])
+    useEffect(()=>{
 
+        listing()
+    },[])
+    const {cities} = useSelector(store => store.ciudades)
     // console.log();
     return (
         <>
             <div className='HomeCont'>
                 <div className='Main'>
+                    <form className='saveCities' onSubmit={handleSubmit}>
                     <center>
                         <input className='Search' name='place' value={place} onChange={handleInput} placeholder='Buscar por ciudad...' type="text" />
                     </center>
+                    <button className='btnS' type='submit'>Guardar Ciudad</button>
+                    </form>
                     <h3 className='ubication'>{ubi}</h3>
                     <div className='info'>
                         <div className='contPrin'>
@@ -99,6 +115,28 @@ const Home = () => {
                             </div>
                         </main>
                     </div>
+                    <table className='favs' >
+                        <thead>
+                            <tr>
+                                <th>Ciudades</th>
+                                <th>Borrar</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            {
+                                cities ?
+                                (
+                                    cities.map((cities, index)=>(
+                                        <tr key={index}>
+                                            <td>{cities.place}</td>
+                                            <td><button onClick={()=> dispatch(AsyncDelete(cities.place))} className='btnS'>Eliminar</button></td>
+                                        </tr>
+                                    ))
+                                )
+                                : <h1>no hay ciudades agregadas</h1>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </>

@@ -1,5 +1,9 @@
 export const Types = {
     login: 'logIn',
     register: 'SingUp',
-    logout: 'LogOut'
+    logout: 'LogOut',
+
+    add: 'Add city',
+    list: 'List cities',
+    delete: 'Delete city'
 }
