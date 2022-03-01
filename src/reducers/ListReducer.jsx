@@ -15,7 +15,7 @@ export const MyListReducer = (state = initialState, action)=>{
             }
         case Types.delete:
             return{
-                cities: state.cities.filter(cit => cit.nom !== action.payload)
+                cities: state.cities.filter(cit => cit.place !== action.payload)
             }
         
         default:

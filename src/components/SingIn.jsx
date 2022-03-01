@@ -19,7 +19,7 @@ const SingIn = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         dispatch(registerAsync(email,password1,name ))
-        navigate('*/home')
+        navigate('/home')
         reset()
     }
     

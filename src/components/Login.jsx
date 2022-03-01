@@ -25,12 +25,12 @@ const Login = ({login}) => {
         e.preventDefault()
         dispatch(loginEmailPassword(email, password));
         console.log(login);
-        navigate('*/home')
+        navigate('/home')
         // reset()
     }
     const handleGoogle = () => {
         dispatch(loginGoogle())
-        navigate('*/home')
+        navigate('/home')
     }
 
     return (
