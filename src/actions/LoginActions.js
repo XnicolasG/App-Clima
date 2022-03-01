@@ -3,23 +3,25 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/a
 import { google } from "../firebase/firebaseConfig";
 
 // ================ Login Manual ========================
-export const ManualLogin = (Email, Password) => {
-    return (dispatch) =>{
+export const loginEmailPassword = (email, password) => {
+
+    return (dispatch) => {
 
         const auth = getAuth();
-         signInWithEmailAndPassword(auth,Email,Password)
-        .then(({user}) =>{
-              dispatch(
-                 loginSincrono(user.uid,user.displayName)
-              ) 
-              console.log('Bienvenid@');
-        })
-        .catch(e =>{
-            console.log(e);
-             console.log('El usuario no existe');
-        })
-     }
- }
+        signInWithEmailAndPassword(auth, email, password)
+            .then(({ user }) => {
+                dispatch(
+                    loginSync(user.uid, user.displayname)
+                )
+                console.log('Bienvenid@');
+                
+            })
+            .catch(e => {
+                console.log(e);
+                console.log('El usuario no existe');
+            })
+    }
+}
 
 // =============== LOGIN con Google============
 export const loginGoogle = () => {

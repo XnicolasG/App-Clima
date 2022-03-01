@@ -1,22 +1,25 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { registerAsync } from '../actions/registerActions'
 import { useForm } from '../hooks/useForms'
 
 const SingIn = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const [ formValue, handleInputChange, reset ] = useForm({
-        name:'Nicolas',
-        email:'nicolas@gmail.com',
-        password1: '123456',
-        password2: '123456'
+        name:'',
+        email:'',
+        password1: '',
+        password2: ''
     })
     const {name, email, password1, password2} = formValue;
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         dispatch(registerAsync(email,password1,name ))
+        navigate('/')
         reset()
     }
     

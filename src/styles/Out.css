@@ -101,3 +101,37 @@
     transform: scale(1.1);
     transition: all .5s ease;
 }
+.ContNav{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.322);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    position: fixed;
+    padding: 1.5%;
+    display: flex;
+    flex-direction: row;
+}
+.ContIcon{
+    width: 4%;
+    display: inline-block;
+}
+.Icon{
+    width: 100%;
+}
+.ContLink{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+}
+.links{
+    margin: 10%;
+    text-decoration: none;
+    color: rgb(40, 111, 153);
+}
+.links:hover{
+    font-size:1.6rem ;
+    transition: all .5s ease;
+}
