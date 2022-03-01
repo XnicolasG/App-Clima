@@ -1,5 +1,5 @@
 import { Types } from "../types/type";
-import { getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import { google } from "../firebase/firebaseConfig";
 
 // ================ Login Manual ========================
@@ -44,5 +44,27 @@ export const loginSync = (id, displayname) => {
             id,
             displayname
         }
+    }
+}
+// ========== LOGOUT ============
+export const logoutAsync=()=>{
+    return(dispatch)=>{
+        const auth = getAuth();
+        signOut(auth)
+        .then((user)=>{
+            console.log("cerrar sesion");
+            console.log(user);
+            dispatch(actionLogout())
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+        
+    }
+}
+
+export const actionLogout = ()=>{
+    return{
+        type:Types.logout
     }
 }

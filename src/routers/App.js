@@ -41,7 +41,7 @@ function App() {
           </PublicRoutes>  
             } />
 
-        <Route path='/*' element={
+        <Route path='*/' element={
           <PrivateRoutes loginStatus={logged}>
             <LogInComponents />
           </PrivateRoutes>

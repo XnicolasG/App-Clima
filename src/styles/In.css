@@ -27,8 +27,31 @@
 
 }
 .contIconW{
-    width: 15%;
+    width: 10%;
 }
 .weatherIcon{
     width:100% ; 
+}
+.contPrin{
+    width: 45%;
+    gap: 5%;
+    display: flex;
+    flex-direction: row;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+.dias{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    justify-content: center;
+    text-align: center;
+}
+.dia{
+width: 45%;
+margin: auto;
 }

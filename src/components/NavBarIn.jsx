@@ -1,9 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logoutAsync } from '../actions/LoginActions'
 
 const NavBarIn = () => {
-    
-    
+    const dispatch = useDispatch()
+    const handleLogout = () =>{
+      dispatch(logoutAsync())
+    }
   return (
     <nav className='ContNav'>
         <div className='ContIcon'>
@@ -11,7 +15,7 @@ const NavBarIn = () => {
         </div>
             <div className='ContLink'>
                 <Link className='links' to='/home'>Inicio</Link>
-                <Link className='links'to='/login/login' >Salir</Link>
+                <Link className='links'to='/login/login' onClick={()=>handleLogout()} >Salir</Link>
             </div>
         
     </nav>

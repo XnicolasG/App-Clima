@@ -1,4 +1,5 @@
 export const Types = {
     login: 'logIn',
-    register: 'SingUp'
+    register: 'SingUp',
+    logout: 'LogOut'
 }
